@@ -1,2 +1,2 @@
 # JobHacker-System
-Repo for tasks of JobHacker 2023 Intake - Java Advanced Track
+Repo for tasks of JobHackers 2023 Intake - Java Advanced Track
