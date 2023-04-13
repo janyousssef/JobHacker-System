@@ -3,7 +3,7 @@ package streams;
 public class Main {
 
     public static void main(String[] args) {
-        ObjectiveOneRunner.run();
+//        ObjectiveOneRunner.run();
         ObjectiveTwoRunner.run();
 
     }
