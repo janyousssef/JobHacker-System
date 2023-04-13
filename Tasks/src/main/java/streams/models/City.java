@@ -1,4 +1,4 @@
-package streams;
+package streams.models;
 
 import java.util.Objects;
 
@@ -70,4 +70,5 @@ public class City {
                 '}';
     }
 }
+
 

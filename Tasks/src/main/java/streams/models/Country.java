@@ -1,4 +1,4 @@
-package streams;
+package streams.models;
 
 import java.util.Objects;
 
@@ -10,6 +10,7 @@ public class Country {
     private final double population;
     private final double gnp;
     private final int capital;
+
 
     public Country(String code, String name, String continent, double surfaceArea, double population, double gnp, int capital) {
         this.code = code;
