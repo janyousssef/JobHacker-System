@@ -1,4 +1,4 @@
-package streams.runners;
+package streams.solutions;
 
 import streams.Repo;
 import streams.models.City;
@@ -9,17 +9,18 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
-public class ObjectiveOneRunner {
+import static java.util.stream.Collectors.*;
+
+public class ObjectiveOne {
     private static final Set<City> cities = Repo.getCities();
     private static final Set<Country> countries = Repo.getCountries();
     private static final Map<String, Country> codeToCountryMap = countries.stream()
-            .collect(Collectors.toMap(Country::getCountryCode, c -> c));
-    private static final Comparator<? super CityPopulationDTO> populationComparator = Comparator.comparing(
-            CityPopulationDTO::getPopulation);
+            .collect(toMap(Country::getCountryCode, c -> c));
+    private static final Comparator<? super CityPopulationDTO> populationComparator =
+            Comparator.comparing(CityPopulationDTO::getPopulation);
 
-    public static void run() {
+    public static void solve() {
 
         Map<String, Optional<CityPopulationDTO>> citiesByCountry = getBiggestCityForEachCountry();
 
@@ -29,22 +30,20 @@ public class ObjectiveOneRunner {
     private static Map<String, Optional<CityPopulationDTO>> getBiggestCityForEachCountry() {
         return cities.stream()
                 .map(CityPopulationDTO::new)
-                .collect(
-                        Collectors.groupingBy(CityPopulationDTO::getCountry,
-                                Collectors.maxBy(populationComparator)));
+                .collect(groupingBy(CityPopulationDTO::getCountry, maxBy(populationComparator)));
     }
 
     private static void printResults(Map<String, Optional<CityPopulationDTO>> citiesByCountry) {
         citiesByCountry.entrySet()
-                .forEach(ObjectiveOneRunner::printMaxPopulation);
+                .forEach(ObjectiveOne::printMaxPopulation);
     }
 
 
     private static void printMaxPopulation(Map.Entry<String, Optional<CityPopulationDTO>> e) {
         //some country codes are not in the countries.csv file, this was causing a null pointer exception
-        String countryName = codeToCountryMap.get(e.getKey()) == null ? "No Country with Such Code" : codeToCountryMap.get(
-                        e.getKey())
-                .getName();
+        String countryName =
+                codeToCountryMap.get(e.getKey()) == null ? "No Country with Such Code" : codeToCountryMap.get(e.getKey())
+                        .getName();
 
         String cityName = e.getValue()
                 .get()

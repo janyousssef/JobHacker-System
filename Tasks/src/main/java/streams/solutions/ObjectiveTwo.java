@@ -1,4 +1,4 @@
-package streams.runners;
+package streams.solutions;
 
 import streams.Repo;
 import streams.models.City;
@@ -6,15 +6,16 @@ import streams.models.CityPopulationDTO;
 import streams.models.Country;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class ObjectiveTwoRunner {
+import static java.util.stream.Collectors.*;
+
+public class ObjectiveTwo {
     private static final Set<City> cities = Repo.getCities();
     private static final Set<Country> countries = Repo.getCountries();
     private static final Comparator<? super CityPopulationDTO> populationComparator =
             Comparator.comparing(CityPopulationDTO::getPopulation);
 
-    public static void run() {
+    public static void solve() {
         Map<String, List<CityPopulationDTO>> citiesByContinent = getCitiesByContinent();
         Map<String, Optional<CityPopulationDTO>> biggestCities = getBiggestCities(citiesByContinent);
         printBiggestCityForEachContinent(biggestCities);
@@ -24,13 +25,12 @@ public class ObjectiveTwoRunner {
 
     private static Map<String, List<CityPopulationDTO>> getCitiesByContinent() {
         return countries.stream()
-                .collect(Collectors.groupingBy(Country::getContinent,
+                .collect(groupingBy(Country::getContinent,
                         //get a list of cities for each country in the continent
-                        Collectors.mapping(country -> findCitiesFor(country),
+                        mapping(country -> findCitiesFor(country),
                                 //this collector allows us to apply a transformation to the collection,
                                 //in this case we flatten the list of lists
-                                Collectors.collectingAndThen(Collectors.toList(),
-                                        listOfLists -> flatten(listOfLists)))));
+                                collectingAndThen(toList(), listOfLists -> flatten(listOfLists)))));
     }
 
 
@@ -39,19 +39,19 @@ public class ObjectiveTwoRunner {
                 .filter(city -> city.getCountryCode()
                         .equals(country.getCountryCode()))
                 .map(CityPopulationDTO::new)
-                .collect(Collectors.toList());
+                .collect(toList());
     }
 
     private static List<CityPopulationDTO> flatten(List<List<CityPopulationDTO>> listOfLists) {
         return listOfLists.stream()
                 .flatMap(List::stream)
-                .collect(Collectors.toList());
+                .collect(toList());
     }
 
     private static Map<String, Optional<CityPopulationDTO>> getBiggestCities(Map<String, List<CityPopulationDTO>> citiesByContinent) {
         return citiesByContinent.entrySet()
                 .stream()
-                .collect(Collectors.toMap(Map.Entry::getKey,
+                .collect(toMap(Map.Entry::getKey,
                         e -> e.getValue()
                                 .stream()
                                 .max(populationComparator)));
