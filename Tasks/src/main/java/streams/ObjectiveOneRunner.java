@@ -14,7 +14,7 @@ public class ObjectiveOneRunner {
     private static final Set<City> cities = Repository.getCities();
     private static final Set<Country> countries = Repository.getCountries();
     private static final Map<String, Country> codeToCountryMap = countries.stream()
-            .collect(Collectors.toMap(Country::getCode, c -> c));
+            .collect(Collectors.toMap(Country::getCountryCode, c -> c));
     private static final Comparator<? super CityPopulationDTO> populationComparator = Comparator.comparing(
             CityPopulationDTO::getPopulation);
 
