@@ -26,3 +26,5 @@ hs_err_pid*
 /.idea/JobHacker-System.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+streams\
+/production/.
