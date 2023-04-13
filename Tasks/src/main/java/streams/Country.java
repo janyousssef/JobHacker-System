@@ -30,7 +30,6 @@ public class Country {
      */
     public static Country fromString(String line) {
         String[] parts = line.split(",");
-        System.out.println(Arrays.toString(parts));
         return new Country(parts[0],
                 parts[1],
                 parts[2],
