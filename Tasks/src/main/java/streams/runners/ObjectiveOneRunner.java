@@ -1,5 +1,6 @@
-package streams;
+package streams.runners;
 
+import streams.Repository;
 import streams.models.City;
 import streams.models.CityPopulationDTO;
 import streams.models.Country;
@@ -18,7 +19,7 @@ public class ObjectiveOneRunner {
     private static final Comparator<? super CityPopulationDTO> populationComparator = Comparator.comparing(
             CityPopulationDTO::getPopulation);
 
-    static void run() {
+    public static void run() {
 
         Map<String, Optional<CityPopulationDTO>> citiesByCountry = getBiggestCityForEachCountry();
 

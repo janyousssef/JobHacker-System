@@ -1,22 +1,24 @@
-package streams;
+package streams.runners;
 
+import streams.Repository;
 import streams.models.City;
 import streams.models.CityPopulationDTO;
 import streams.models.Country;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ObjectiveTwoRunner {
     private static final Set<City> cities = Repository.getCities();
     private static final Set<Country> countries = Repository.getCountries();
+    private static final Comparator<? super CityPopulationDTO> populationComparator =
+            Comparator.comparing(CityPopulationDTO::getPopulation);
 
-    static void run() {
+    public static void run() {
         Map<String, List<CityPopulationDTO>> citiesByContinent = getCitiesByContinent();
-        printResults(citiesByContinent);
+        Map<String, Optional<CityPopulationDTO>> biggestCities = getBiggestCities(citiesByContinent);
+        printBiggestCityForEachContinent(biggestCities);
+
     }
 
 
@@ -25,6 +27,8 @@ public class ObjectiveTwoRunner {
                 .collect(Collectors.groupingBy(Country::getContinent,
                         //get a list of cities for each country in the continent
                         Collectors.mapping(country -> findCitiesFor(country),
+                                //this collector allows us to apply a transformation to the collection,
+                                //in this case we flatten the list of lists
                                 Collectors.collectingAndThen(Collectors.toList(),
                                         listOfLists -> flatten(listOfLists)))));
     }
@@ -44,12 +48,20 @@ public class ObjectiveTwoRunner {
                 .collect(Collectors.toList());
     }
 
-    private static void printResults(Map<String, List<CityPopulationDTO>> citiesByContinent) {
-        citiesByContinent.forEach((key, value) -> value
+    private static Map<String, Optional<CityPopulationDTO>> getBiggestCities(Map<String, List<CityPopulationDTO>> citiesByContinent) {
+        return citiesByContinent.entrySet()
                 .stream()
-                .max(Comparator.comparing(CityPopulationDTO::getPopulation))
-                .ifPresent(city -> printBiggestCity(key, city)));
-         }
+                .collect(Collectors.toMap(Map.Entry::getKey,
+                        e -> e.getValue()
+                                .stream()
+                                .max(populationComparator)));
+    }
+
+    private static void printBiggestCityForEachContinent(Map<String, Optional<CityPopulationDTO>> biggestCities) {
+        //some continents have no cities, this was causing a null pointer exception
+        CityPopulationDTO UNKNOWN_CITY = new CityPopulationDTO(new City(0, "NO CITY FOUND", 0, "Unknown"));
+        biggestCities.forEach((key, value) -> printBiggestCity(key, value.orElse(UNKNOWN_CITY)));
+    }
 
     private static void printBiggestCity(String continent, CityPopulationDTO city) {
         System.out.printf("The biggest city in %s is %s with %d people%n",
