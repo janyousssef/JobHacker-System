@@ -12,7 +12,7 @@ public class CityPopulationDTO {
     public CityPopulationDTO(City city) {
         this.name = city.getName();
         this.population = city.getPopulation();
-        this.country = city.getCountry();
+        this.country = city.getCountryCode();
     }
 
     public String getName() {

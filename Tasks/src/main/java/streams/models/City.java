@@ -39,7 +39,7 @@ public class City {
         return name;
     }
 
-    public String getCountry() {
+    public String getCountryCode() {
         return country;
     }
 
