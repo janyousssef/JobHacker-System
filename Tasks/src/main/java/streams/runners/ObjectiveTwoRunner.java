@@ -1,6 +1,6 @@
 package streams.runners;
 
-import streams.Repository;
+import streams.Repo;
 import streams.models.City;
 import streams.models.CityPopulationDTO;
 import streams.models.Country;
@@ -9,8 +9,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class ObjectiveTwoRunner {
-    private static final Set<City> cities = Repository.getCities();
-    private static final Set<Country> countries = Repository.getCountries();
+    private static final Set<City> cities = Repo.getCities();
+    private static final Set<Country> countries = Repo.getCountries();
     private static final Comparator<? super CityPopulationDTO> populationComparator =
             Comparator.comparing(CityPopulationDTO::getPopulation);
 

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Repository {
+public class Repo {
     private static final String CURRENT_PATH = Paths.get("")
             .toAbsolutePath() + "/Tasks/src/main/java/streams/resources";
     private static final Set<City> cities = getAsList("/Cities.csv").stream()
