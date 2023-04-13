@@ -1,6 +1,5 @@
 package streams;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class City {
@@ -24,7 +23,6 @@ public class City {
      */
     public static City fromString(String line) {
         String[] parts = line.split(",");
-        System.out.println(Arrays.toString(parts));
         return new City(Integer.parseInt(parts[0]),
                 parts[1],
                 Integer.parseInt(parts[2]),
