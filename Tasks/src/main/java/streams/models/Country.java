@@ -3,7 +3,7 @@ package streams.models;
 import java.util.Objects;
 
 public class Country {
-    private final String code;
+    private final String countryCode;
     private final String name;
     private final String continent;
     private final double surfaceArea;
@@ -13,7 +13,7 @@ public class Country {
 
 
     public Country(String code, String name, String continent, double surfaceArea, double population, double gnp, int capital) {
-        this.code = code;
+        this.countryCode = code;
         this.name = name;
         this.continent = continent;
         this.surfaceArea = surfaceArea;
@@ -39,8 +39,8 @@ public class Country {
                 Integer.parseInt(parts[6]));
     }
 
-    public String getCode() {
-        return code;
+    public String getCountryCode() {
+        return countryCode;
     }
 
     public String getName() {
@@ -75,20 +75,20 @@ public class Country {
         Country country = (Country) o;
         return Double.compare(country.surfaceArea,
                 surfaceArea) == 0 && population == country.population && Double.compare(country.gnp,
-                gnp) == 0 && capital == country.capital && Objects.equals(code, country.code) && Objects.equals(name,
+                gnp) == 0 && capital == country.capital && Objects.equals(countryCode, country.countryCode) && Objects.equals(name,
                 country.name) && Objects.equals(continent, country.continent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, name, continent, surfaceArea, population, gnp, capital);
+        return Objects.hash(countryCode, name, continent, surfaceArea, population, gnp, capital);
 
     }
 
     @Override
     public String toString() {
         return "Country{" +
-                "code='" + code + '\'' +
+                "code='" + countryCode + '\'' +
                 ", name='" + name + '\'' +
                 ", continent='" + continent + '\'' +
                 ", surfaceArea=" + surfaceArea +
