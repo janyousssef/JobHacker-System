@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.TreeSet;
 
-public class QuestionTwo {
+public class QuestionOne {
     static TreeSet<Character> openers = new TreeSet<>();
 
     public static void main(String[] args) {
