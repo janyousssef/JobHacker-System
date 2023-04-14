@@ -28,3 +28,16 @@ hs_err_pid*
 /.idea/vcs.xml
 streams\
 /production/.
+/Tasks/.idea/.gitignore
+/target/compiled/streams/resources/Cities.csv
+/.idea/codeStyles/codeStyleConfig.xml
+/Tasks/.idea/compiler.xml
+/target/compiled/streams/resources/Countries.csv
+/Tasks/.idea/encodings.xml
+/Tasks/.idea/jarRepositories.xml
+/.idea/misc.xml
+/Tasks/.idea/misc.xml
+/target/compiled/streams/resources/StreamTask.PNG
+/.idea/uiDesigner.xml
+/Tasks/.idea/uiDesigner.xml
+/Tasks/.idea/vcs.xml
