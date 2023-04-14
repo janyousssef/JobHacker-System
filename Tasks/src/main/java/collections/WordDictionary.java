@@ -17,7 +17,7 @@ public class WordDictionary {
                     "slip", "fast", "command", "dash", "professor", "lobby", "exploit", "remember", "crusade", "ghost",
                     "forecast", "recommend", "financial", "argument", "favour", "ranch"};
     private static final ArrayList<String> strings = new ArrayList<>(Arrays.asList(hundredWords));
-    private static final Map<Character, List<String>> map = createMap();
+    private static final Map<Character, Set<String>> map = createMap();
 
 
 
@@ -27,13 +27,13 @@ public class WordDictionary {
 
     public void printForChar(Character c) {
         System.out.println(c + " -> " + map.getOrDefault(c,
-                Collections.singletonList("There are no words for this letter")));
+                Collections.singleton("There are no words for this letter")));
 
     }
 
-    private static Map<Character, List<String>> createMap() {
+    private static Map<Character, Set<String>> createMap() {
         return strings.stream()
-                .collect(Collectors.groupingBy(s -> s.charAt(0),TreeMap::new, Collectors.toList()));
+                .collect(Collectors.groupingBy(s -> s.charAt(0), TreeMap::new, Collectors.toCollection(TreeSet::new)));
     }
 
     public void addWord() {
@@ -48,7 +48,7 @@ public class WordDictionary {
         if (map.containsKey(word.charAt(0))) {
             map.get(word.charAt(0)).add(word);
         } else {
-            map.put(word.charAt(0), new ArrayList<>(Collections.singletonList(word)));
+            map.put(word.charAt(0), new TreeSet<>(Collections.singletonList(word)));
         }
     }
 }
