@@ -14,7 +14,7 @@ public class Main {
     }
 
     private static void promptForChoice() {
-        System.out.println("Enter 'all' to print all words, " + "any letter to print the words for this letter only" + " and, 'exit' to exit");
+        System.out.println("Enter 'all' to print all words, 'add' to add a word, any letter to print the words for this letter only and, 'exit' to exit");
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine();
         switch (choice.toLowerCase()) {
