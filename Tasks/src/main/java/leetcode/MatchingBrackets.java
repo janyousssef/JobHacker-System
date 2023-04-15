@@ -28,7 +28,7 @@ public class MatchingBrackets {
         for (int i = 0; i < str.length(); i++) {
             if (openers.contains(str.charAt(i)))
                 queue.add(str.charAt(i));
-            else if (!queue.isEmpty() && isCorrectCloser(str.charAt(i), queue.peekLast()))
+            else if (!queue.isEmpty() && isCorrectCloser(queue.peekLast(), str.charAt(i)))
                 queue.removeLast();
             else
                 return false;
@@ -36,7 +36,7 @@ public class MatchingBrackets {
         return queue.size() == 0;
     }
 
-    private static boolean isCorrectCloser(char current, Character last) {
+    private static boolean isCorrectCloser(Character last, char current) {
         if (last == '[' && current == ']') return true;
         if (last == '{' && current == '}') return true;
         if (last == '(' && current == ')') return true;
