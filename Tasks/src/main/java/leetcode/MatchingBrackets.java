@@ -28,9 +28,10 @@ public class MatchingBrackets {
         for (int i = 0; i < str.length(); i++) {
             if (openers.contains(str.charAt(i)))
                 queue.add(str.charAt(i));
-            else if (!queue.isEmpty() && isCorrectCloser(str.charAt(i), queue.peekLast())) {
+            else if (!queue.isEmpty() && isCorrectCloser(str.charAt(i), queue.peekLast()))
                 queue.removeLast();
-            } else return false;
+            else
+                return false;
         }
         return queue.size() == 0;
     }
