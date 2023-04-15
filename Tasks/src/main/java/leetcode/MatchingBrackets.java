@@ -26,17 +26,21 @@ public class MatchingBrackets {
         Deque<Character> queue = new ArrayDeque<>();
 
         for (int i = 0; i < str.length(); i++) {
-            if (openers.contains(str.charAt(i)))
+            if (isOpeningBracket(str.charAt(i)))
                 queue.add(str.charAt(i));
-            else if (!queue.isEmpty() && isCorrectCloser(queue.peekLast(), str.charAt(i)))
+            else if (!queue.isEmpty() && isCorrectClosingBracket(queue.peekLast(), str.charAt(i)))
                 queue.removeLast();
             else
                 return false;
         }
-        return queue.size() == 0;
+        return queue.isEmpty();
     }
 
-    private static boolean isCorrectCloser(Character last, char current) {
+    private static boolean isOpeningBracket(char c) {
+        return openers.contains(c);
+    }
+
+    private static boolean isCorrectClosingBracket(Character last, char current) {
         if (last == '[' && current == ']') return true;
         if (last == '{' && current == '}') return true;
         if (last == '(' && current == ')') return true;
