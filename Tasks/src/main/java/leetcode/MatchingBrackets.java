@@ -40,6 +40,7 @@ public class MatchingBrackets {
         if (last == '[' && current == ']') return true;
         if (last == '{' && current == '}') return true;
         if (last == '(' && current == ')') return true;
+
         return false;
     }
 
