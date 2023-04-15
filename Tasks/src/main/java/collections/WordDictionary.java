@@ -1,7 +1,9 @@
 package collections;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toCollection;
 
 public class WordDictionary {
     private static final String[] hundredWords =
@@ -19,8 +21,6 @@ public class WordDictionary {
     private static final ArrayList<String> strings = new ArrayList<>(Arrays.asList(hundredWords));
     private static final Map<Character, Set<String>> map = createMap();
 
-
-
     public void printAll() {
         map.forEach((k, v) -> System.out.println(k + " -> " + v));
     }
@@ -31,11 +31,6 @@ public class WordDictionary {
 
     }
 
-    private static Map<Character, Set<String>> createMap() {
-        return strings.stream()
-                .collect(Collectors.groupingBy(s -> s.charAt(0), TreeMap::new, Collectors.toCollection(TreeSet::new)));
-    }
-
     public void addWord() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a word to add");
@@ -44,9 +39,15 @@ public class WordDictionary {
         printForChar(word.charAt(0));
     }
 
+    private static Map<Character, Set<String>> createMap() {
+        return strings.stream()
+                .collect(groupingBy(s -> s.charAt(0), TreeMap::new, toCollection(TreeSet::new)));
+    }
+
     private static void addWordInternal(String word) {
         if (map.containsKey(word.charAt(0))) {
-            map.get(word.charAt(0)).add(word);
+            map.get(word.charAt(0))
+                    .add(word);
         } else {
             map.put(word.charAt(0), new TreeSet<>(Collections.singletonList(word)));
         }
