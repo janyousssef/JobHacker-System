@@ -26,7 +26,8 @@ public class MatchingBrackets {
         Deque<Character> queue = new ArrayDeque<>();
 
         for (int i = 0; i < str.length(); i++) {
-            if (openers.contains(str.charAt(i))) queue.add(str.charAt(i));
+            if (openers.contains(str.charAt(i)))
+                queue.add(str.charAt(i));
             else if (!queue.isEmpty() && isCorrectCloser(str.charAt(i), queue.peekLast())) {
                 queue.removeLast();
             } else return false;
