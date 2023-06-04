@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Event {
-    private final Map<Integer,Seat> seats;
+    private final Map<Integer, Seat> seats;
     private int seatsSold;
     private int seatsAvailable;
     private int failedAttempts;
@@ -26,7 +26,7 @@ public class Event {
         int id = 0;
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                seats.put(id++,new Seat(id, i, j));
+                seats.put(id++, new Seat(id, i, j));
             }
         }
     }
@@ -64,12 +64,12 @@ public class Event {
     }
 
 
-    public EventStatistics getStatistics(){
+    public EventStatistics getStatistics() {
         return new EventStatistics(seatsSold, seatsAvailable, successfulAttempts, failedAttempts);
     }
 
     public void setSoldOut(boolean b) {
-        this.soldOut=b;
+        this.soldOut = b;
     }
 
     private static class EventStatistics {
