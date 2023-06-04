@@ -1,4 +1,4 @@
-package Threads.OddEven;
+package threads.oddeven;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,7 +24,7 @@ public class Main {
             Thread.sleep(0,100);
             executor.execute(evenThread);
         }
-        executor.awaitTermination(1, TimeUnit.SECONDS);
+        executor.awaitTermination(1, TimeUnit.MILLISECONDS);
         executor.shutdown();
 
     }
