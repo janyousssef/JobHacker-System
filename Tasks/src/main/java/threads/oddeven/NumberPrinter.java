@@ -1,4 +1,4 @@
-package Threads.OddEven;
+package threads.oddeven;
 
 public class NumberPrinter implements Runnable{
     private final int max;
