@@ -6,20 +6,21 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
         System.out.println("Running test cases...");
         TestCases.ThousandThreads100Seats();
-        sleepToAvoidMixedOutput();
+        AvoidMixedOutput();
         TestCases.SeatPurchasedAlready();
-        sleepToAvoidMixedOutput();
+        AvoidMixedOutput();
         TestCases.EventSoldOut();
     }
 
-    private static void sleepToAvoidMixedOutput() {
-        System.out.println("Sleeping for 3 seconds before next test case...");
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-
+    private static void AvoidMixedOutput() {
+        // 2 Because main thread and IntelliJ's thread are running.
+        while (Thread.activeCount() > 2) {
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
-
     }
 
 }
