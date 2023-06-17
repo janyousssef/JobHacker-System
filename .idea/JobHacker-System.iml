@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Tasks/src/main/java" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/Tasks" />
+    <content url="file://$MODULE_DIR$/Tasks/src" />
+    <content url="file://$MODULE_DIR$/Tasks/src/main" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
