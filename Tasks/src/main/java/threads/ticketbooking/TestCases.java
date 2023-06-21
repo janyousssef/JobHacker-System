@@ -5,7 +5,7 @@ import threads.ticketbooking.domain.Event;
 import java.util.concurrent.CountDownLatch;
 
 public class TestCases {
-    static void ThousandThreads100Seats() throws InterruptedException {
+    static void thousandThreads100Seats() throws InterruptedException {
         Event event = new Event(10, 10);
         int numThreads = 1000;
         CountDownLatch latch = new CountDownLatch(numThreads);
@@ -24,11 +24,11 @@ public class TestCases {
 
         }
         latch.await();
-        printStats("================ ThousandThreads100Seats Statistics =================", event,
+        printStats("================ thousandThreads100Seats Statistics =================", event,
                    "=====================================================================");
     }
 
-    static void SeatPurchasedAlready() throws InterruptedException {
+    static void seatPurchasedAlready() throws InterruptedException {
         Event event = new Event(10, 10);
         int seatId = 1;
         CountDownLatch latch = new CountDownLatch(2);
@@ -47,11 +47,11 @@ public class TestCases {
         }).start();
 
         latch.await();
-        printStats("================= SeatPurchasedAlready Statistics =================", event,
+        printStats("================= seatPurchasedAlready Statistics =================", event,
                    "===================================================================");
     }
 
-    static void EventSoldOut() throws InterruptedException {
+    static void eventSoldOut() throws InterruptedException {
         Event event = new Event(10, 10);
         event.setSoldOut(true);
 
@@ -64,7 +64,7 @@ public class TestCases {
             }).start();
         }
         latch.await();
-        printStats("====================== EventSoldOut Statistics ======================", event,
+        printStats("====================== eventSoldOut Statistics ======================", event,
                    "=====================================================================");
     }
 

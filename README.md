@@ -10,3 +10,6 @@ Repo for tasks of JobHackers 2023 Internship - Java Advanced Track
 ## Task 2: Threads
 - ### [Thread-safe Ticket Booking](Tasks/src/main/java/threads/ticketbooking)
 - ### [Print Numbers in Different Threads](Tasks/src/main/java/threads/oddeven)
+
+## Task 3: Java 8 Streams
+- ### [Streams exercises](Tasks/src/main/java/streams2) 
