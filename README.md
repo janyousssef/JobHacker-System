@@ -13,3 +13,7 @@ Repo for tasks of JobHackers 2023 Internship - Java Advanced Track
 
 ## Task 3: Java 8 Streams
 - ### [Streams exercises](Tasks/src/main/java/streams2) 
+
+## Task 4: JDBC
+- ### [JDBC/SQL basics](Tasks/src/main/java/sql/basics) 
+- ### [JDBC/SQL Batching and PreparedStatements](Tasks/src/main/java/sql/employees) 
