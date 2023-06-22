@@ -31,12 +31,12 @@ public class Main {
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
             for (int i = 1; i <= columnCount; i++) {
-                System.out.printf("| %15s ", metaData.getColumnLabel(i));
+                System.out.printf("%15s | ", metaData.getColumnLabel(i));
             }
             System.out.println();
 
             while (resultSet.next()) {
-                System.out.printf("| %15d | %15s | %15s | %15s | %15d | %15s | %15s | %15d | %n",
+                System.out.printf("%15d | %15s | %15s | %15s | %15d | %15s | %15s | %15d | %n",
                                   resultSet.getInt(1),
                                   resultSet.getString(2),
                                   resultSet.getString(3),
