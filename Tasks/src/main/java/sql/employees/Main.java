@@ -1,6 +1,7 @@
 package sql.employees;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 
@@ -8,16 +9,30 @@ public class Main {
     public static final EmployeeDao empDao = new EmployeeDao();
     public static void main(String[] args) throws SQLException {
             insertDummyData();
+            System.out.println("------------- BEFORE UPDATING f_name AND vacation_balance -------------");
             selectAndPrint();
-            batchUpdateEmployees();
+            updateVacationBalance();
+            updateFirstName();
+            empDao.executeBatch();
             System.out.println("\n\n\n ------------- AFTER UPDATING f_name AND vacation_balance -------------");
             selectAndPrint();
             empDao.close();
 
     }
 
+    private static void updateFirstName() {
+        empDao.addToBatch("update employees set employees.f_name = CONCAT('Mr/Mrs ',employees.f_name) where employees.age>45");
+    }
+
     private static void selectAndPrint() throws SQLException {
         try (ResultSet resultSet = empDao.selectAllEmployees()) {
+            ResultSetMetaData metaData = resultSet.getMetaData();
+            int columnCount = metaData.getColumnCount();
+            for (int i = 1; i < columnCount; i++) {
+                System.out.print(metaData.getColumnLabel(i)+" | ");
+            }
+            System.out.println();
+
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
                 String fName = resultSet.getString(2);
@@ -29,8 +44,8 @@ public class Main {
                 int vacationBalance = resultSet.getInt(8);
 
                 System.out.println(
-                        id + " " + fName + " " + lName + " " + sex + " " + age + " " + address + " " + phoneNumber +
-                                " " +
+                        id + " | " + fName + " | " + lName + " | " + sex + " | " + age + " | " + address + " | " + phoneNumber +
+                                " | " +
                                 vacationBalance);
             }
         }
@@ -46,10 +61,8 @@ public class Main {
         empDao.executeBatch();
     }
 
-    private static void batchUpdateEmployees() {
-        Main.empDao.addToBatch("update employees set employees.vacation_balance = 45 where employees.age>45");
-        Main.empDao.addToBatch("update employees set employees.f_name = CONCAT('Mr/Mrs ',employees.f_name) where employees.age>45");
-        Main.empDao.executeBatch();
+    private static void updateVacationBalance() {
+        empDao.addToBatch("update employees set employees.vacation_balance = 45 where employees.age>45");
     }
 
 
