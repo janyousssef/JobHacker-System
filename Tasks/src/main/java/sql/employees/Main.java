@@ -8,15 +8,17 @@ import java.sql.SQLException;
 public class Main {
     public static final EmployeeDao empDao = new EmployeeDao();
     public static void main(String[] args) throws SQLException {
-            insertDummyData();
-            System.out.println("------------- BEFORE UPDATING f_name AND vacation_balance -------------");
-            selectAndPrint();
-            updateVacationBalance();
-            updateFirstName();
-            empDao.executeBatch();
-            System.out.println("\n\n\n ------------- AFTER UPDATING f_name AND vacation_balance -------------");
-            selectAndPrint();
-            empDao.close();
+        insertDummyData();
+        String prefix = "------------------------------------------------------------ ";
+        String suffix = "---------------------------------------";
+        System.out.println(prefix + "BEFORE UPDATING f_name AND vacation_balance " + suffix);
+        selectAndPrint();
+        updateVacationBalance();
+        updateFirstName();
+        empDao.executeBatch();
+        System.out.println("\n\n" + prefix + "AFTER UPDATING f_name AND vacation_balance " + suffix);
+        selectAndPrint();
+        empDao.close();
 
     }
 
@@ -28,25 +30,21 @@ public class Main {
         try (ResultSet resultSet = empDao.selectAllEmployees()) {
             ResultSetMetaData metaData = resultSet.getMetaData();
             int columnCount = metaData.getColumnCount();
-            for (int i = 1; i < columnCount; i++) {
-                System.out.print(metaData.getColumnLabel(i)+" | ");
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.printf("| %15s ", metaData.getColumnLabel(i));
             }
             System.out.println();
 
             while (resultSet.next()) {
-                int id = resultSet.getInt(1);
-                String fName = resultSet.getString(2);
-                String lName = resultSet.getString(3);
-                String sex = resultSet.getString(4);
-                int age = resultSet.getInt(5);
-                String address = resultSet.getString(6);
-                String phoneNumber = resultSet.getString(7);
-                int vacationBalance = resultSet.getInt(8);
-
-                System.out.println(
-                        id + " | " + fName + " | " + lName + " | " + sex + " | " + age + " | " + address + " | " + phoneNumber +
-                                " | " +
-                                vacationBalance);
+                System.out.printf("| %15d | %15s | %15s | %15s | %15d | %15s | %15s | %15d | %n",
+                                  resultSet.getInt(1),
+                                  resultSet.getString(2),
+                                  resultSet.getString(3),
+                                  resultSet.getString(4),
+                                  resultSet.getInt(5),
+                                  resultSet.getString(6),
+                                  resultSet.getString(7),
+                                  resultSet.getInt(8));
             }
         }
     }
