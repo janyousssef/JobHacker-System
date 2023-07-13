@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="web">
+    <output-path>$PROJECT_DIR$/Tasks/src/main/java/web/</output-path>
+    <root id="root">
+      <element id="directory" name="web" />
+    </root>
+  </artifact>
+</component>
