@@ -25,4 +25,5 @@ hs_err_pid*
 #Custom
 target\
 compiled\
+out\
 /target/compiled/streams/resources/*
