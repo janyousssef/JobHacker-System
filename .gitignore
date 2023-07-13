@@ -26,4 +26,6 @@ hs_err_pid*
 target\
 compiled\
 out\
+out/
+JspServlet/target/
 /target/compiled/streams/resources/*
