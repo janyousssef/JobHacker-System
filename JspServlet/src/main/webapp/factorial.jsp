@@ -4,10 +4,35 @@
 <head>
     <title>Factorial</title>
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: auto;
+        font-size: 70px;
+    }
+
+    div {
+        position: absolute;
+        width: 100%;
+    }
+
+    table {
+        position: relative;
+        left: 50%;
+        bottom: 50%;
+        font-size: xx-large;
+        translate: -50%;
+        text-align: center;
+        width: 40%;
+    }
+</style>
 <body>
-<h1 style="text-align: center;margin-bottom: auto;
-    font-size: 70px;">Factorial
-</h1>
+<h1>Factorial</h1>
 <br/>
 <%!
     public int factorial(int n) {
@@ -19,8 +44,7 @@
     }
 %>
 <div style="position: absolute; width: 100%">
-    <table border="4px" style="position: relative; left:50%;bottom: 50%;font-size: xx-large;translate: -50%;text-align: center;
-    width: 40%;">
+    <table border="4px">
         <tr>
             <td>Number</td>
             <td>Factorial</td>
