@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e633a-bcdb-4c77-a3c5-2256b48f17fc" name="Changes" comment="[feat] finish index page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="e22e633a-bcdb-4c77-a3c5-2256b48f17fc" name="Changes" comment="[config] update .idea file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +47,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -189,7 +187,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689280853130</updated>
-      <workItem from="1689280854054" duration="14753000" />
+      <workItem from="1689280854054" duration="14879000" />
     </task>
     <task id="LOCAL-00001" summary="add files to index">
       <created>1689281964466</created>
@@ -240,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689295617379</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[config] update .idea file">
+      <created>1689295681880</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689295681880</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +270,7 @@
     <MESSAGE value="[cleanup] move styles to style tag" />
     <MESSAGE value="[feat] finish age calculator" />
     <MESSAGE value="[feat] finish index page" />
-    <option name="LAST_COMMIT_MESSAGE" value="[feat] finish index page" />
+    <MESSAGE value="[config] update .idea file" />
+    <option name="LAST_COMMIT_MESSAGE" value="[config] update .idea file" />
   </component>
 </project>
