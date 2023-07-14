@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e633a-bcdb-4c77-a3c5-2256b48f17fc" name="Changes" comment="init project" />
+    <list default="true" id="e22e633a-bcdb-4c77-a3c5-2256b48f17fc" name="Changes" comment="[feat] finish index page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +20,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_372/src.zip!/java/time/LocalDate.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_372/src.zip!/java/time/temporal/ChronoUnit.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_372/src.zip!/java/time/temporal/Temporal.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.jdks/corretto-1.8.0_372/src.zip!/java/util/concurrent/TimeUnit.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -82,6 +91,9 @@
     </configuration>
     <configuration name="Tomcat 8.5.91" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.91" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <deployment>
         <artifact name="JspServlet:war exploded">
           <settings>
@@ -177,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689280853130</updated>
-      <workItem from="1689280854054" duration="1137000" />
+      <workItem from="1689280854054" duration="14753000" />
     </task>
     <task id="LOCAL-00001" summary="add files to index">
       <created>1689281964466</created>
@@ -193,7 +205,42 @@
       <option name="project" value="LOCAL" />
       <updated>1689281980133</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1st task finished">
+      <created>1689284607785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689284607785</updated>
+    </task>
+    <task id="LOCAL-00004" summary="factorial task finished">
+      <created>1689284618057</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689284618057</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[cleanup] move styles to style tag">
+      <created>1689295524959</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689295524959</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[feat] finish age calculator">
+      <created>1689295556363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689295556363</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[feat] finish index page">
+      <created>1689295617379</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689295617379</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +260,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add files to index" />
     <MESSAGE value="init project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init project" />
+    <MESSAGE value="1st task finished" />
+    <MESSAGE value="factorial task finished" />
+    <MESSAGE value="[cleanup] move styles to style tag" />
+    <MESSAGE value="[feat] finish age calculator" />
+    <MESSAGE value="[feat] finish index page" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] finish index page" />
   </component>
 </project>
