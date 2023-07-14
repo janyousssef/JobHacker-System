@@ -18,5 +18,5 @@ Repo for tasks of JobHackers 2023 Internship - Java Advanced Track
 - ### [JDBC/SQL Basics](src/main/java/sql/basics) 
 - ### [JDBC/SQL Batching and PreparedStatements](src/main/java/sql/employees) 
 
-## Task 4: JSP/Servlets
+## Task 5: JSP/Servlets
 - ### [JSP & Servlet](JspServlet) 
