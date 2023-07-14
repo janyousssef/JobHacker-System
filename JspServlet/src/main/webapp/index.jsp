@@ -60,6 +60,7 @@
         background-color: #059191FF;
     }
     button[id=btn2]:hover {
+        color: navajowhite;
         background-color: #672F0AFF;
     }
 </style>
