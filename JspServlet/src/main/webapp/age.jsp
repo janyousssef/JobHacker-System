@@ -69,6 +69,17 @@
         text-align: center;
         margin: auto;
     }
+    #error-result-header {
+        padding-bottom: 7px;
+        padding-top: 7px;
+        font-weight: bolder;
+        width: 90%;
+        background-color: red;
+        border: 3px solid black;
+        font-size: 200%;
+        text-align: center;
+        margin: auto;
+    }
     #result-container {
         width: 50%;
         margin: 0 auto;

@@ -15,20 +15,34 @@ public class AgeCalculatorServlet extends HttpServlet {
 
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+        PrintWriter out = res.getWriter();
 
         res.setContentType("text/html");
         //include original page's content
         req.getRequestDispatcher("age.jsp").include(req, res);
 
         //parse dates
-        LocalDate dateOfBirth = LocalDate.parse(req.getParameter("dob"));
-        LocalDate ageAt = LocalDate.parse(req.getParameter("age-at"));
+        LocalDate dateOfBirth;
+        LocalDate ageAt;
+        try {
+            dateOfBirth = LocalDate.parse(req.getParameter("dob"));
+            ageAt = LocalDate.parse(req.getParameter("age-at"));
+        } catch (Exception e) {
 
-        PrintWriter out = res.getWriter();
+            out.println("<hr>");
+            out.println("<div id='result-container'>");
+            out.println("<p id=\"error-result-header\">Error: Invalid or empty date(s)</p>");
+            out.println("</div>");
+
+            return;
+        }
+
         //validation
         if (dateOfBirth.isAfter(ageAt)) {
-            out.println("<p id=\"result-header\" style='font-weight: bolder'>Error</p>");
-            out.println("<p id=\"result\">Date of birth cannot be after age at</p>");
+            out.println("<hr>");
+            out.println("<div id='result-container'>");
+            out.println("<p id=\"error-result-header\">Error: Date of birth cannot be after age at</p>");
+            out.println("</div>");
             return;
         }
 
