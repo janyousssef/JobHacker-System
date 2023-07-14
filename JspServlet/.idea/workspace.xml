@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e22e633a-bcdb-4c77-a3c5-2256b48f17fc" name="Changes" comment="[config] update .idea file" />
+    <list default="true" id="e22e633a-bcdb-4c77-a3c5-2256b48f17fc" name="Changes" comment="[feat] add background image">
+      <change beforePath="$PROJECT_DIR$/../.idea/JobHacker-System.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/JobHacker-System.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jan/jspservlet/AgeCalculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jan/jspservlet/AgeCalculatorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/age.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/age.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +36,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2SX70rvFcNRW31rr8qOX4m8xp1I" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -45,7 +53,7 @@
     "last_opened_file_path": "D:/IdeaProjects/JobHacker-System/JspServlet/src/main/webapp",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.general"
@@ -53,6 +61,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\JobHacker-System\JspServlet\src\main\webapp" />
+      <recent name="D:\IdeaProjects\JobHacker-System\JspServlet\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\JobHacker-System\JspServlet\src\main\webapp" />
     </key>
   </component>
@@ -188,6 +200,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689280853130</updated>
       <workItem from="1689280854054" duration="14879000" />
+      <workItem from="1689298093823" duration="1794000" />
     </task>
     <task id="LOCAL-00001" summary="add files to index">
       <created>1689281964466</created>
@@ -245,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689295681880</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[feat] add background image">
+      <created>1689299866096</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689299866096</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +291,7 @@
     <MESSAGE value="[feat] finish age calculator" />
     <MESSAGE value="[feat] finish index page" />
     <MESSAGE value="[config] update .idea file" />
-    <option name="LAST_COMMIT_MESSAGE" value="[config] update .idea file" />
+    <MESSAGE value="[feat] add background image" />
+    <option name="LAST_COMMIT_MESSAGE" value="[feat] add background image" />
   </component>
 </project>
