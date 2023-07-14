@@ -9,3 +9,5 @@ JobHackers 2023 Internship - Java Advanced Track.
 ### A JSP that takes in two dates, then sends them to a servlet which calculates the number of days, hours, minutes, and seconds between the two dates. The servlet then sends the results back to the JSP to be displayed.
 
 ## Demo
+https://github.com/janyousssef/JobHacker-System/assets/84196929/554fba70-9db0-43fd-8eb8-1162fd99f8e6
+
