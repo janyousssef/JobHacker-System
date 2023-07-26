@@ -25,4 +25,7 @@ hs_err_pid*
 #Custom
 target\
 compiled\
+out\
+out/
+JspServlet/target/
 /target/compiled/streams/resources/*

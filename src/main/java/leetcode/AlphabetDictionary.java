@@ -1,6 +1,7 @@
 package leetcode;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class AlphabetDictionary {
     public static void main(String[] args) {
