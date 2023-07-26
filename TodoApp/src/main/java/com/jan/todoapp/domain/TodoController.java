@@ -9,19 +9,25 @@ import org.springframework.web.bind.annotation.*;
 public class TodoController {
     private final TodoService todoService;
 
-    @GetMapping("/{id}")
-    public TodoItem read(@PathVariable Integer id) {
-        return todoService.read(id);
-    }
-
     @PostMapping
     public TodoItem create(@RequestBody TodoItem todoItem) {
         return todoService.createOrUpdate(todoItem);
     }
 
+    @GetMapping("/{id}")
+    public TodoItem read(@PathVariable Integer id) {
+        return todoService.read(id);
+    }
+
+
     @RequestMapping(value = "/{id}", method = {RequestMethod.PATCH, RequestMethod.PUT})
     public TodoItem update(@PathVariable Integer id, @RequestBody TodoItem todoItem) {
         todoItem.setId(id);
         return todoService.createOrUpdate(todoItem);
+    }
+
+    @DeleteMapping("/{id}")
+    public TodoItem delete(@PathVariable Integer id) {
+        return todoService.delete(id);
     }
 }
