@@ -1,6 +1,9 @@
 # Description
-Contains the source code for the Todo App task of the 
-JobHackers 2023 Internship - Java Advanced Track.
+Todo App for the JobHackers 2023 Internship - Java Advanced Track.  
+
+## Functionality 
+A REST API providing CRUD operations for a simple Todo App, with database persistence.  
+Contains a Controller with the appropriate methods mapping, which delegates to a Service to perform the bsuiness logic, which has acces to the repository for persistence.
 
 ## Technologies used
 - Spring Boot
