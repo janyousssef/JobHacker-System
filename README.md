@@ -20,3 +20,6 @@ Repo for tasks of JobHackers 2023 Internship - Java Advanced Track
 
 ## Task 5: JSP/Servlets
 - ### [JSP & Servlet](JspServlet) 
+
+## Task 6: Spring Boot Todo App
+- ### [Todo App](TodoApp) 
